@@ -64,26 +64,18 @@ const questions = [
     ];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, (err) =>
-//     err ? console.log(err) : console.log('README.md generated. Go to ')
-// )};
+
 
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
   };
 
 // TODO: Create a function to initialize app
-// const init = () => {
-//     inquirer.prompt(questions)
-//         .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
-//         .then(() => console.log(answers))
-//         .catch((err) => console.log(err));    
-// };
+
 const init = () => {
     inquirer.prompt(questions)
         .then((answers) => writeToFile('README.md', generateMarkdown({...answers})))
-        .then(() => console.log(answers))
+        .then(() => console.log(JSON.stringify(answers)))
         .catch((err) => console.log(err));    
 };
 

@@ -143,8 +143,8 @@ function generateMarkdown(data) {
   ## License
   ${data.license}
   ## Questions
-  If you have further questions, find me on GitHub at https://github.com/${github}
-  Please don't email me at ${notEmail}, because I'm not an idiot and that isn't a real email address.
+  If you have further questions, find me on GitHub at https://github.com/${data.github}
+  Please don't email me at ${data.notEmail}, because I'm not an idiot and that isn't a real email address.
 
   ##Credits
   Josh Goeke: https://github.com/joshuagoeke
