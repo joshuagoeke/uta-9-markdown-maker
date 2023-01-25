@@ -1,11 +1,14 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const renderLicenseBadge = require('./utils/generateMarkdown.js')
+const renderLicenseBadge = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
+console.log('running markdown-maker')
 
 // TODO: Create an array of questions for user input
 const questions = () => {
-    return inquirer.prompt([
+    return answers = inquirer.prompt([
         {
             type: 'input',
             name: 'github',
@@ -68,10 +71,10 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 const init = () => {
-    inquirer.prompt(questions).then((response)=>{
-        console.log(response)
-        writeToFile("README.md", generateMarkdown(response))
-    });    
+    inquirer.prompt(questions)
+        .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
+        .then(() => console.log(answers))
+        .catch((err) => console.log(err));    
 };
 // Function call to initialize app
 init();
