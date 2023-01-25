@@ -1,14 +1,15 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const renderLicenseBadge = require('./utils/generateMarkdown.js');
+const path = require('path');
+// const renderLicenseBadge = require('./utils/generateMarkdown.js');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 console.log('running markdown-maker')
 
 // TODO: Create an array of questions for user input
-const questions = () => {
-    return answers = inquirer.prompt([
+const questions = [
+    
         {
             type: 'input',
             name: 'github',
@@ -60,21 +61,32 @@ const questions = () => {
                 'MIT', 'PPDL', 'The Unlicense',
             ]
         },
-    ])
-};
+    ];
 
 // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, (err) =>
+//     err ? console.log(err) : console.log('README.md generated. Go to ')
+// )};
+
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-    err ? console.log(err) : console.log('README.md generated. Go to ')
-)};
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+  };
 
 // TODO: Create a function to initialize app
+// const init = () => {
+//     inquirer.prompt(questions)
+//         .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
+//         .then(() => console.log(answers))
+//         .catch((err) => console.log(err));    
+// };
 const init = () => {
     inquirer.prompt(questions)
-        .then((answers) => writeToFile('README.md', generateMarkdown(answers)))
+        .then((answers) => writeToFile('README.md', generateMarkdown({...answers})))
         .then(() => console.log(answers))
         .catch((err) => console.log(err));    
 };
+
+
 // Function call to initialize app
 init();

@@ -151,7 +151,7 @@ function generateMarkdown(data) {
   Karen Peazzoni: https://github.com/kpeazzoni
   Christopher Zavala: https://github.com/chriszavala
 `;
-}
+};
 
 //need to run functions on license, I think...
 
