@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   // switch using code snippets from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-  switch(selection) {
+  switch(license) {
     case 'MIT':
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
       break;
@@ -20,7 +20,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  switch(selection) {
+  switch(license) {
     case 'MIT':
       return `https://opensource.org/licenses/MIT`;
       break;
@@ -38,7 +38,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  switch(selection) {
+  switch(license) {
     case 'MIT':
       return `
       Copyright 2023 
@@ -99,7 +99,7 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  
+  ${renderLicenseBadge(data.license)}
   ## Description
   
   ${data.description}
@@ -147,7 +147,9 @@ function generateMarkdown(data) {
   Please don't email me at ${notEmail}, because I'm not an idiot and that isn't a real email address.
 
   ##Credits
-  Shout out to 
+  Josh Goeke: https://github.com/joshuagoeke
+  Karen Peazzoni: https://github.com/kpeazzoni
+  Christopher Zavala: https://github.com/chriszavala
 `;
 }
 

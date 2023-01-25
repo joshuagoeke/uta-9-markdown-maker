@@ -24,7 +24,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Please tell us about your project, especially since it is this program you are using. What are we doing right now?'
+            message: 'Please tell us about your project: What does it do?'
         },
         {
             type: 'checkbox',
@@ -62,8 +62,9 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
-}
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.log(err) : console.log('README.md generated. Go to ')
+)};
 
 // TODO: Create a function to initialize app
 const init = () => {
