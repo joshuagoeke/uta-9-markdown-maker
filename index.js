@@ -35,7 +35,7 @@ const questions = [
             name: 'instructions',
             message: 'Please choose all that apply:',
             choices: [
-                'Install Node.js', 'run in VS integrated terminal: npm init -y', 'run in integrated terminal: npm i inquirer@8.2.4', 'run in integrated terminal: node index.js'
+                '*Install Node.js', '*run in VS integrated terminal: npm init -y', '*run in integrated terminal: npm i inquirer@8.2.4', '*run in integrated terminal: node index.js'
             ]
         },
         {
@@ -73,9 +73,9 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 
 const init = () => {
-    inquirer.prompt(questions)
+    const answers = inquirer.prompt(questions)
         .then((answers) => writeToFile('README.md', generateMarkdown({...answers})))
-        .then(() => console.log(JSON.stringify(answers)))
+        .then(() => console.log(answers))
         .catch((err) => console.log(err));    
 };
 

@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+const licenseBadge = function renderLicenseBadge(license) {
   // switch using code snippets from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
   switch(license) {
     case 'MIT':
@@ -37,7 +37,7 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+const licenseText = function renderLicenseSection(license) {
   switch(license) {
     case 'MIT':
       return `
@@ -99,7 +99,7 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseBadge(data.license)}
+  ${licenseBadge}
   ## Description
   
   ${data.description}
@@ -141,7 +141,7 @@ function generateMarkdown(data) {
   ## Testing
   ${data.testing}
   ## License
-  ${data.license}
+  ${licenseBadge}
   ## Questions
   If you have further questions, find me on GitHub at https://github.com/${data.github}
   Please don't email me at ${data.notEmail}, because I'm not an idiot and that isn't a real email address.

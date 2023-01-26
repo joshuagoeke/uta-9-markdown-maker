@@ -1,8 +1,8 @@
-# Markdown-Maker
-  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+# j
+  
   ## Description
   
-  nothing
+  j
 
   This project is an assignment for the University of Texas - Austin coding bootcamp, and here is a description of the acceptance criteria:
 
@@ -33,18 +33,18 @@
   - [Questions](#questions)
 
   ## Installation
-  Install Node.js,run in VS integrated terminal: npm init -y,run in integrated terminal: npm i inquirer@8.2.4,run in integrated terminal: node index.js
+  *run in VS integrated terminal: npm init -y
   ## Usage
-  The might not...
+  j
   ## Contributions 
-  They might have better things to do...
+  j
   ## Testing
-  Run it and see if it works
+  j
   ## License
-  The Unlicense
+  PPDL
   ## Questions
-  If you have further questions, find me on GitHub at https://github.com/joshuagoeke
-  Please don't email me at cr@zy.com, because I'm not an idiot and that isn't a real email address.
+  If you have further questions, find me on GitHub at https://github.com/j
+  Please don't email me at j, because I'm not an idiot and that isn't a real email address.
 
   ##Credits
   Josh Goeke: https://github.com/joshuagoeke
