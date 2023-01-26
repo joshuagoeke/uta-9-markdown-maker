@@ -13,22 +13,56 @@ const questions = [
         {
             type: 'input',
             name: 'github',
-            message: 'What is your GitHub Username?'
+            message: 'What is your GitHub Username?',
+
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "You're not on GitHub? At least make something up. One character at least!";
+                }
+            }
         },
         {
             type: 'input',
             name: 'notEmail',
-            message: 'What is your fake email that will be prominantly displayed where any bot or creep can find it in the plain view of the entire internet? (Please do not use your real email.)'
+            message: 'What is your fake email that will be prominantly displayed where any bot or creep can find it in the plain view of the entire internet? (Please do not use your real email.)',
+        
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "Oh come on. Make something up. Mash the buttons. Go cr@zy.com!";
+                }
+            }
         },
         {
             type: 'input',
             name: 'title',
-            message: 'What is the title of your Project?'
+            message: 'What is the title of your Project?',
+
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "Your project doesn't have a name? Seriously? At least one letter required.";
+                }
+            }
+        
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Please tell us about your project: What does it do?'
+            message: 'Please tell us about your project: What does it do?',
+            
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "Your project doesn't do anything? What's your favorite letter?";
+                }
+            }
+
         },
         {
             type: 'checkbox',
@@ -41,17 +75,41 @@ const questions = [
         {
             type: 'input',
             name: 'use',
-            message: 'How will people use this amazing product?'
+            message: 'How will people use this amazing product?',
+
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "It's OK to say 'I don't know.' But you gotta write something here.";
+                }
+            }
         },
         {
             type: 'input',
             name: 'contribution',
-            message: 'How will people help make this thing more awesome?'
+            message: 'How will people help make this thing more awesome?',
+
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "If you already think it's the bees knees, did you get any help? You could acknowledge your team here. But please, just give me something to work with!";
+                }
+            }
         },
         {
             type: 'input',
             name: 'testing',
-            message: 'How will people test this product?:'
+            message: 'How will people test this product?:',
+
+            validate: userInput => {
+                if (userInput){
+                    return true;
+                }else{
+                    return "Just tell them to run it and see if it works. One character at least!";
+                }
+            }
         },
         {
             type: 'list',
