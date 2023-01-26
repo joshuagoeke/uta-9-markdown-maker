@@ -1,5 +1,5 @@
 # j
-  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description
   
   j
@@ -41,7 +41,7 @@
   ## Testing
   j
   ## License
-  PPDL
+  MIT
   ## Questions
   If you have further questions, find me on GitHub at https://github.com/j
   Please don't email me at j, because I'm not an idiot and that isn't a real email address.

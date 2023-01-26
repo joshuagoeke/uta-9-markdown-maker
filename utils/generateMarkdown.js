@@ -2,35 +2,35 @@
 // If there is no license, return an empty string
 const licenseBadge = function renderLicenseBadge(license) {
   // switch using code snippets from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-  switch(license) {
+  switch(data.license) {
     case 'MIT':
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
       break;
-      case 'PDDL':
+    case 'PDDL':
       return `[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)`;
       break;
-      case 'The Unlicense':
+    case 'The Unlicense':
       return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
       break;
-      default: 
+    default: 
       return '';
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  switch(license) {
+const licenseLink = function renderLicenseLink(license) {
+  switch(data.license) {
     case 'MIT':
       return `https://opensource.org/licenses/MIT`;
       break;
-      case 'PDDL':
+    case 'PDDL':
       return `https://opendatacommons.org/licenses/pddl/`;
       break;
-      case 'The Unlicense':
+    case 'The Unlicense':
       return `http://unlicense.org/`;
       break;
-      default: 
+    default: 
       return '';
   }
 }
@@ -38,7 +38,7 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 const licenseText = function renderLicenseSection(license) {
-  switch(license) {
+  switch(data.license) {
     case 'MIT':
       return `
       Copyright 2023 
@@ -49,7 +49,7 @@ const licenseText = function renderLicenseSection(license) {
       
       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`;
       break;
-      case 'PDDL':
+    case 'PDDL':
       return `Open Data Commons Public Domain Dedication and License (PDDL) Summary
       This is a human-readable summary of the Public Domain Dedication and License 1.0. Please see the disclaimer below.
       
@@ -65,7 +65,7 @@ const licenseText = function renderLicenseSection(license) {
       
       This is not a license. It is simply a handy reference for understanding the PDDL 1.0 — it is a human-readable expression of some of its key terms. This document has no legal value, and its contents do not appear in the actual license. Read the full PDDL 1.0 license text for the exact terms that apply.`;
       break;
-      case 'The Unlicense':
+    case 'The Unlicense':
       return `This is free and unencumbered software released into the public domain.
 
       Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -91,7 +91,7 @@ const licenseText = function renderLicenseSection(license) {
       
       For more information, please refer to <http://unlicense.org/>`;
       break;
-      default: 
+    default: 
       return '';
   }
 }
@@ -141,7 +141,10 @@ function generateMarkdown(data) {
   ## Testing
   ${data.testing}
   ## License
-  ${licenseBadge}
+  ${licenseText}
+  
+  Find more information at ${licenseLink}
+
   ## Questions
   If you have further questions, find me on GitHub at https://github.com/${data.github}
   Please don't email me at ${data.notEmail}, because I'm not an idiot and that isn't a real email address.
