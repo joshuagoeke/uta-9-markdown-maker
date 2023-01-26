@@ -14,9 +14,9 @@
 
   ## Installation
   - Install Node.js
-,- run in VS integrated terminal: npm init -y
-,- run in integrated terminal: npm i inquirer@8.2.4
-,- run in integrated terminal: node index.js
+  - run in VS integrated terminal: npm init -y
+  - run in integrated terminal: npm i inquirer@8.2.4
+  - run in integrated terminal: node index.js
 
   ## Usage
   'I guess I don't really know. I mean, I barely understood the assignment. Honestly, the error messages have kind of intimidated me and I'm not sure I'm cut out for programming after all...

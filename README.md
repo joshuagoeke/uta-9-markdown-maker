@@ -50,11 +50,14 @@
 
   ## Installation
   - Install Node.js
-,- run in VS integrated terminal: npm init -y
-,- run in integrated terminal: npm i inquirer@8.2.4
-,- run in integrated terminal: node index.js
+  - run in VS integrated terminal: npm init -y
+  - run in integrated terminal: npm i inquirer@8.2.4
+  - run in integrated terminal: node index.js
 
   ## Usage
+  Here's a video:
+  https://www.loom.com/share/5da26722ea0a4d07bd25afc529374be4
+
   Make sure to look for the result README.md in the .dist/ folder.
   ## Contributions 
   We are not seeking further collaborators at this time.
