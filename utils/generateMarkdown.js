@@ -1,8 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-const licenseBadge = function renderLicenseBadge(license) {
+function renderLicenseBadge(license) {
   // switch using code snippets from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-  switch(data.license) {
+  switch(license) {
     case 'MIT':
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
       break;
@@ -19,8 +19,8 @@ const licenseBadge = function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-const licenseLink = function renderLicenseLink(license) {
-  switch(data.license) {
+function renderLicenseLink(license) {
+  switch(license) {
     case 'MIT':
       return `https://opensource.org/licenses/MIT`;
       break;
@@ -37,8 +37,8 @@ const licenseLink = function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const licenseText = function renderLicenseSection(license) {
-  switch(data.license) {
+function renderLicenseSection(license) {
+  switch(license) {
     case 'MIT':
       return `
       Copyright 2023 
@@ -99,7 +99,7 @@ const licenseText = function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${licenseBadge}
+  ${renderLicenseBadge(data.license)}
   ## Description
   
   ${data.description}
@@ -141,18 +141,19 @@ function generateMarkdown(data) {
   ## Testing
   ${data.testing}
   ## License
-  ${licenseText}
+  ${renderLicenseSection(data.license)}
   
-  Find more information at ${licenseLink}
+  Find more information at ${renderLicenseLink(data.license)}
 
   ## Questions
   If you have further questions, find me on GitHub at https://github.com/${data.github}
   Please don't email me at ${data.notEmail}, because I'm not an idiot and that isn't a real email address.
 
   ##Credits
-  Josh Goeke: https://github.com/joshuagoeke
-  Karen Peazzoni: https://github.com/kpeazzoni
-  Christopher Zavala: https://github.com/chriszavala
+  - Josh Goeke: https://github.com/joshuagoeke
+  - Karen Peazzoni: https://github.com/kpeazzoni
+  - Christopher Zavala: https://github.com/chriszavala
+  - Shout out to Diem Ly for helping me get un-stuck!
 `;
 };
 
